@@ -2,7 +2,7 @@
 import { IPost } from './../../interface/post.interface';
 import { PostService } from './../../servicios/post.service';
 import { Component, OnInit } from '@angular/core';
-// import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-tabla',
@@ -22,15 +22,14 @@ export class TablaComponent implements OnInit {
   }
 
   CargaPost(): void {
-    // console.log('jjh');
-    // this.postService.getPOST().subscribe(
-    //     data => {
-    //       this.posts = data;
-    //     },
-    //     error => {
-    //       console.log('error');
-    //     }
-    //   );
+    this.postService.getPOST().subscribe(
+        data => {
+          this.posts = data;
+        },
+        error => {
+          console.log('error');
+        }
+      );
   }
 
 

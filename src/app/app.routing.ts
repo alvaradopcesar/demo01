@@ -1,8 +1,10 @@
+
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { BienvenidaComponent } from './bienvenida/bienvenida.component';
 import { TablaComponent } from './tabla/tabla.component';
+import { TablaeditComponent } from './tabla/tablaedit/tablaedit.component';
 
 const appRoutes: Routes = [
     {
@@ -17,6 +19,10 @@ const appRoutes: Routes = [
     {
         path : 'tabla',
         component : TablaComponent,
+    },
+    {
+        path : 'tabla/:id',
+        component : TablaeditComponent
     }
     // {
     //     path : 'tabla/:id',
@@ -35,5 +41,5 @@ const appRoutes: Routes = [
 })
 export class AppRoutingModule { }
 export const routedComponents: any[] = [
-    BienvenidaComponent, TablaComponent
+    BienvenidaComponent, TablaComponent, TablaeditComponent
 ];

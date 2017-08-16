@@ -1,3 +1,4 @@
+import { HttpModule } from '@angular/http';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -10,17 +11,21 @@ import { Routes, RouterModule } from '@angular/router';
 import { AppRoutingModule, routedComponents } from './app.routing';
 
 import { PostService } from './../servicios/post.service';
+import { TablaeditComponent } from './tabla/tablaedit/tablaedit.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     BienvenidaComponent,
     TablaComponent,
-    routedComponents
+    routedComponents,
+    TablaeditComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpModule
   ],
   providers: [PostService],
   bootstrap: [AppComponent]
