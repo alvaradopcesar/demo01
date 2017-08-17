@@ -21,7 +21,11 @@ const appRoutes: Routes = [
         component : TablaComponent,
     },
     {
-        path : 'tabla/:id',
+        path : 'tablaedit',
+        component : TablaeditComponent,
+    },
+    {
+        path : 'tablaedit/:id',
         component : TablaeditComponent
     }
     // {

@@ -1,6 +1,7 @@
 import { PostService } from './../../../servicios/post.service';
 import { IPost } from './../../../interface/post.interface';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-tablaedit',
@@ -10,16 +11,36 @@ import { Component, OnInit } from '@angular/core';
 export class TablaeditComponent implements OnInit {
 
   posts: IPost;
+  action: string;
 
   constructor(
-    private postService: PostService
+    private postService: PostService,
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
-    this.onCargaDetalle(20);
+
+    this.route.url.subscribe( ( url: any) => {
+      this.action = ( url.length > 1 ? url[1].path : 'add');
+      if ( this.action === 'add') {
+          console.log('add');
+      }else{
+        this.route.params.subscribe( (params: { id: number}) => {
+          let id: number = params.id;
+          // console.log('valor id');
+          // console.log(id);
+          this.onCargaDetalle(id);
+
+        }
+       )
+      }
+    });
+
   }
 
   onCargaDetalle(id: number ): void {
+      console.log('onCargaDetalle');
+      console.log(id);
       this.postService.getPOSTId(id).subscribe(
           data => {
             this.posts = data;
@@ -29,6 +50,10 @@ export class TablaeditComponent implements OnInit {
           }
         );
 
+  }
+
+  OnBack(): void {
+    window.history.back();
   }
 
 }
