@@ -2,12 +2,36 @@
   tablaedit works!
   <h1> Edicion de registros </h1>
   <br>
-  ID : {{posts.id}}
+  ID : {{post.id}}
   <br>
-  User ID : {{posts.userId}}
+  User ID : {{post.userId}}
   <br>
-  Titulo : {{posts.title}}
+  Titulo : {{post.title}}
   <br>
+  Texto prueba : {{ texto }}
+  <br>
+  Texto prueba : {{ texto | uppercase }}
+  <br>
+  Texto prueba : {{ texto | lowercase }}
+  <br>
+  Texto prueba : {{ texto | slice:0:3 }}
+  <br>
+  Texto prueba : {{ texto | uppercase | slice:0:3 }}
+  <br>
+  Fecha prueba : {{ fecha }}
+  <br>
+  Fecha prueba : {{ fecha | date }}
+  <br>
+  Fecha prueba : {{ fecha | date :"dd/mm/yyyy"}}
+  <br>
+  Fecha prueba : {{ fecha | date :"dd-mm-yy HH:mm:ss"}}
+  <br>
+  Usando Pipe Doble {{ 20 | doble }}
+  <br>
+  <input type="number" #numero (keyup)="0">
+  {{ numero.value | doble }}
+  {{ cadena | tranlate }}
 </div>
+
 
 <button type="button" (click)="OnBack()" class="btn">Regresar</button>

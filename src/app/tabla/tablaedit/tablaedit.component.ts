@@ -10,8 +10,11 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class TablaeditComponent implements OnInit {
 
-  posts: IPost;
+  post: IPost;
   action: string;
+
+  texto: String = 'Texto';
+  fecha: Date = new Date();
 
   constructor(
     private postService: PostService,
@@ -43,7 +46,7 @@ export class TablaeditComponent implements OnInit {
       console.log(id);
       this.postService.getPOSTId(id).subscribe(
           data => {
-            this.posts = data;
+            this.post = data;
           },
           error => {
             console.log('error');

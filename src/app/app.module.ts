@@ -12,6 +12,7 @@ import { AppRoutingModule, routedComponents } from './app.routing';
 
 import { PostService } from './../servicios/post.service';
 import { TablaeditComponent } from './tabla/tablaedit/tablaedit.component';
+import { DoblePipe } from './doble.pipe';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { TablaeditComponent } from './tabla/tablaedit/tablaedit.component';
     TablaComponent,
     routedComponents,
     TablaeditComponent,
+    DoblePipe,
   ],
   imports: [
     BrowserModule,
